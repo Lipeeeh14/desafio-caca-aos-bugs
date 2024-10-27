@@ -73,7 +73,7 @@ public class TransactionHandler(AppDbContext context) : ITransactionHandler
             context.Transactions.Update(transaction);
             context.SaveChangesAsync();
 
-            return new Response<Transaction?>(transaction, 202, "Transação atualizada com sucesso!");
+            return new Response<Transaction?>(transaction, 200, "Transação atualizada com sucesso!");
         }
         catch
         {
