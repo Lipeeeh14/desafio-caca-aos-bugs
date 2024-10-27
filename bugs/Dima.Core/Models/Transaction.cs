@@ -1,4 +1,5 @@
 using Dima.Core.Enums;
+using Dima.Core.Requests;
 
 namespace Dima.Core.Models;
 
@@ -18,4 +19,13 @@ public class Transaction
     public Category Category { get; set; } = null!;
 
     public string UserId { get; set; } = string.Empty;
+
+    public void UpdateTransaction(Transaction transaction) 
+    {
+        CategoryId = transaction.CategoryId;
+        Amount = transaction.Amount;
+        PaidOrReceivedAt = transaction.PaidOrReceivedAt;
+        Title = transaction.Title;
+        Type = transaction.Type;
+    }
 }
